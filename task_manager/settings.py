@@ -30,6 +30,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = '/admin/login/'
+STATIC_URL = '/static/'
+
 
 # Application definition
 
