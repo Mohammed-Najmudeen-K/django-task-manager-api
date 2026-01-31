@@ -1,0 +1,54 @@
+A backend REST API built using Django REST Framework that allows users to manage tasks securely using JWT authentication and PostgreSQL as the database.
+
+This project focuses on backend best practices including authentication, authorization, database integration, and API testing.
+
+🚀 Features
+
+JWT-based user authentication
+Secure, user-specific task management
+CRUD operations (Create, Read, Update, Delete)
+PostgreSQL database integration
+Environment variable-based configuration
+API testing using Postman
+
+🛠 Tech Stack
+
+Python
+Django
+Django REST Framework
+PostgreSQL
+JWT (SimpleJWT)
+Postman
+Git
+
+🔐 Authentication
+
+Authentication is implemented using JSON Web Tokens (JWT) via djangorestframework-simplejwt.
+
+Obtain Access Token
+
+POST
+/api/token/
+
+{
+  "username": "your_username",
+  "password": "your_password"
+}
+
+
+Use the access token in request headers:
+
+Authorization: Bearer <access_token>
+
+📡 API Endpoints
+Method	Endpoint	Description
+POST	/api/token/	Obtain JWT token
+POST	/api/token/refresh/	Refresh access token
+GET	/api/tasks/	List user-specific tasks
+POST	/api/tasks/	Create a new task
+PUT	/api/tasks/{id}/	Update an existing task
+DELETE	/api/tasks/{id}/	Delete a task
+
+🧪 API Testing
+
+All APIs were tested using Postman to ensure proper request handling, authentication, and response validation.
