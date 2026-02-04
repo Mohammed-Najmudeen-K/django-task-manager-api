@@ -1,54 +1,162 @@
-A backend REST API built using Django REST Framework that allows users to manage tasks securely using JWT authentication and PostgreSQL as the database.
+# 🗂️ Task Manager – Full‑Stack Application
 
-This project focuses on backend best practices including authentication, authorization, database integration, and API testing.
+A full‑stack **Task Manager** application built with **Django REST Framework** (backend) and **React** (frontend). The project supports authentication using **JWT**, task CRUD operations, and a clean separation of frontend and backend.
 
-🚀 Features
+---
 
-JWT-based user authentication
-Secure, user-specific task management
-CRUD operations (Create, Read, Update, Delete)
-PostgreSQL database integration
-Environment variable-based configuration
-API testing using Postman
+## 🚀 Tech Stack
 
-🛠 Tech Stack
+### Backend
 
-Python
-Django
-Django REST Framework
-PostgreSQL
-JWT (SimpleJWT)
-Postman
-Git
+* Python
+* Django 5.x
+* Django REST Framework
+* Simple JWT (Authentication)
+* PostgreSQL 
 
-🔐 Authentication
+### Frontend
 
-Authentication is implemented using JSON Web Tokens (JWT) via djangorestframework-simplejwt.
+* React (Create React App)
+* Axios
+* React Router
 
-Obtain Access Token
+---
 
-POST
-/api/token/
+## 📁 Project Structure
 
-{
-  "username": "your_username",
-  "password": "your_password"
-}
+```
+task_manager/
+│
+├── Backend/
+│   ├── manage.py
+│   ├── requirements.txt
+│   ├── task_manager/
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   └── tasks/
+│       ├── models.py
+│       ├── serializers.py
+│       ├── views.py
+│       └── urls.py
+│
+├── FR/
+│   └── task-manager-frontend/
+│       ├── package.json
+│       └── src/
+│           ├── pages/
+│           ├── api.js
+│           └── App.js
+│
+└── README.md
+```
+
+---
+
+## ⚙️ Backend Setup
+
+### 1️⃣ Create virtual environment
+
+```bash
+python -m venv venv
+```
+
+### 2️⃣ Activate virtual environment
+
+**Windows**
+
+```bash
+venv\Scripts\activate
+```
+
+### 3️⃣ Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Run migrations
+
+```bash
+python manage.py migrate
+```
+
+### 5️⃣ Start backend server
+
+```bash
+python manage.py runserver
+```
+
+Backend will run at:
+
+```
+http://127.0.0.1:8000/
+```
+
+---
+
+## 🎨 Frontend Setup
+
+```bash
+cd FR/task-manager-frontend
+npm install
+npm start
+```
+
+Frontend will run at:
+
+```
+http://localhost:3000/
+```
+
+---
+
+## 🔐 Authentication
+
+* JWT‑based authentication
+* Access & refresh tokens
+* Protected task APIs
+
+---
+
+## 📌 Features
+
+* User authentication (JWT)
+* Create, Read, Update, Delete tasks
+* RESTful APIs
+* Clean frontend UI
+* Modular project structure
+
+---
+
+## 🧪 API Endpoints (Sample)
+
+| Method | Endpoint            | Description   |
+| ------ | ------------------- | ------------- |
+| POST   | /api/token/         | Login         |
+| POST   | /api/token/refresh/ | Refresh token |
+| GET    | /api/tasks/         | List tasks    |
+| POST   | /api/tasks/         | Create task   |
+
+---
+
+## 📦 Environment Variables
+
+Create a `.env` file in backend (optional):
+
+```env
+SECRET_KEY=your_secret_key
+DEBUG=True
+```
+
+---
+
+## 🧠 Notes
+
+* Ensure backend is running before frontend
+* CORS enabled for frontend‑backend communication
+* Virtual environment should not be committed
+
+---
 
 
-Use the access token in request headers:
-
-Authorization: Bearer <access_token>
-
-📡 API Endpoints
-Method	Endpoint	Description
-POST	/api/token/	Obtain JWT token
-POST	/api/token/refresh/	Refresh access token
-GET	/api/tasks/	List user-specific tasks
-POST	/api/tasks/	Create a new task
-PUT	/api/tasks/{id}/	Update an existing task
-DELETE	/api/tasks/{id}/	Delete a task
-
-🧪 API Testing
-
-All APIs were tested using Postman to ensure proper request handling, authentication, and response validation.
