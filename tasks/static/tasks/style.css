@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+}
+
+.task {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.completed {
+    color: green;
+}
+
+.pending {
+    color: red;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+a.delete {
+    color: red;
+}
+
+.pagination {
+    margin-top: 20px;
+}

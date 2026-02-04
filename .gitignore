@@ -6,13 +6,12 @@ __pycache__/
 db.sqlite3
 
 # Django
-*.log
 staticfiles/
+media/
 
-# Node
+# Node / React
 node_modules/
-npm-debug.log*
-yarn-error.log*
+build/
 
 # OS
 .DS_Store
